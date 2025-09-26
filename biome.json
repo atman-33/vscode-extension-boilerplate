@@ -11,6 +11,7 @@
       "tests/**/*.ts",
       "webview-ui/src/**/*.ts",
       "webview-ui/src/**/*.tsx",
+      "!node_modules/**/*",      
       "!webview-ui/src/components/ui/**/*.tsx"
     ],
     "ignoreUnknown": false
