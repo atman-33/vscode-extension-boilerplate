@@ -4,7 +4,8 @@ import path from "node:path";
 export default defineConfig({
 	test: {
 		environment: "node",
-		include: ["tests/**/*.test.ts"],
+		include: ["tests/**/*.test.ts", "src/**/*.test.ts"],
+		pool: "threads",
 		setupFiles: ["./vitest.setup.ts"],
 		coverage: { reporter: ["text", "lcov", "html"], provider: "v8" },
 	},
