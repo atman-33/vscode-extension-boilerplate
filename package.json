@@ -89,7 +89,7 @@
     }
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.4",
+    "@biomejs/biome": "^2.3.2",
     "@jest/globals": "^29.7.0",
     "@types/glob": "^8.1.0",
     "@types/node": "^20.x",
@@ -103,7 +103,7 @@
     "ts-jest": "^29.4.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.3.0",
-    "ultracite": "^5.4.4",
+    "ultracite": "^6.1.0",
     "vitest": "^3.2.4",
     "vsce": "^2.15.0"
   }

@@ -35,7 +35,7 @@ function getNonce() {
 	const possible =
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	const NonceLength = 32;
-	for (let i = 0; i < NonceLength; i++) {
+	for (let i = 0; i < NonceLength; i += 1) {
 		text += possible.charAt(Math.floor(Math.random() * possible.length));
 	}
 	return text;

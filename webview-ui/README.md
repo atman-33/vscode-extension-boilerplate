@@ -33,6 +33,7 @@ webview-ui/
 - Prefer the shared modules under `src/components` and `src/hooks` before introducing feature-local code.
 - Add feature-only utilities inside the nested `components/` or `hooks/` directories to keep boundaries clear.
 - Keep styling in Tailwind-style utility classes (see `src/app.css` for base tokens) and avoid inline styles when reusable classes exist.
+- Declare React component props using `interface` definitions for consistency across the codebase.
 - Exchange messages with the extension via `vscode.postMessage` and subscribe through `window.addEventListener('message', …)` inside React effects.
 - When adding new steering or config references, obtain paths through the shared `ConfigManager` utilities from the extension layer.
 
