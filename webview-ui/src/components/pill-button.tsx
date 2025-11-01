@@ -1,10 +1,11 @@
 import type React from "react";
 
-export type PillButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+export interface PillButtonProps
+	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
 	style?: React.CSSProperties;
 	children: React.ReactNode;
-};
+}
 
 /**
  * Reusable pill-shaped action button used in headers and toolbars.
