@@ -31,7 +31,7 @@
     "lint": "ultracite lint",
     "format": "ultracite format",
     "check": "ultracite check",
-    "test": "vitest",
+    "test": "vitest run",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
     "prepare": "husky",
@@ -89,7 +89,7 @@
     }
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.2",
+    "@biomejs/biome": "^2.3.6",
     "@jest/globals": "^29.7.0",
     "@types/glob": "^8.1.0",
     "@types/node": "^20.x",
@@ -103,7 +103,7 @@
     "ts-jest": "^29.4.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.3.0",
-    "ultracite": "^6.1.0",
+    "ultracite": "^6.3.4",
     "vitest": "^3.2.4",
     "vsce": "^2.15.0"
   }
