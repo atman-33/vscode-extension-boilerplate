@@ -35,19 +35,21 @@ export class InteractiveViewProvider implements WebviewViewProvider {
 			"interactive"
 		);
 
-		webviewView.webview.onDidReceiveMessage((message) => {
-			switch (message.command) {
-				case "interactive-view.sendMessage": {
-					const reversedText = message.text.split("").reverse().join("");
-					this._view?.webview.postMessage({
-						command: "interactive-view.showMessage",
-						text: `Reversed text: ${reversedText}`,
-					});
-					return;
+		webviewView.webview.onDidReceiveMessage(
+			(message: { command: string; text: string }) => {
+				switch (message.command) {
+					case "interactive-view.sendMessage": {
+						const reversedText = message.text.split("").reverse().join("");
+						this._view?.webview.postMessage({
+							command: "interactive-view.showMessage",
+							text: `Reversed text: ${reversedText}`,
+						});
+						return;
+					}
+					default:
+						return;
 				}
-				default:
-					return;
 			}
-		});
+		);
 	}
 }

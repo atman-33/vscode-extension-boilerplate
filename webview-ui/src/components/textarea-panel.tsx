@@ -1,20 +1,20 @@
 import type React from "react";
 
 interface TextareaPanelProps {
-	value: string;
-	onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
-	onKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement>;
-	placeholder?: string;
-	disabled?: boolean;
-	rows?: number;
-	textareaRef?: React.Ref<HTMLTextAreaElement>;
-	/** Additional classes for the textarea element */
-	textareaClassName?: string;
+	children?: React.ReactNode;
 	/** Additional classes for the container */
 	containerClassName?: string;
 	/** Optional inline style for container */
 	containerStyle?: React.CSSProperties;
-	children?: React.ReactNode;
+	disabled?: boolean;
+	onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+	onKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement>;
+	placeholder?: string;
+	rows?: number;
+	/** Additional classes for the textarea element */
+	textareaClassName?: string;
+	textareaRef?: React.Ref<HTMLTextAreaElement>;
+	value: string;
 }
 
 /**

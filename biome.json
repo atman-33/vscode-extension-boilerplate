@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
@@ -12,7 +12,8 @@
       "webview-ui/src/**/*.ts",
       "webview-ui/src/**/*.tsx",
       "!node_modules/**/*",
-      "!webview-ui/src/components/ui/**/*.tsx"
+      "!webview-ui/src/components/ui/**/*.tsx",
+      "!**/*.svg"
     ],
     "ignoreUnknown": false
   },
@@ -23,7 +24,6 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
       "suspicious": {
         "noImplicitAnyLet": "off",
         "noAssignInExpressions": "off",
@@ -47,9 +47,6 @@
         "noUnusedFunctionParameters": "off",
         "noUnusedVariables": "off",
         "noUnusedPrivateClassMembers": "off"
-      },
-      "nursery": {
-        "noEmptySource": "off"
       }
     }
   },
@@ -67,5 +64,9 @@
       }
     }
   },
-  "extends": ["ultracite/core"]
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/react",
+    "ultracite/biome/vitest"
+  ]
 }

@@ -15,9 +15,9 @@ export class NotificationUtils {
 	): Promise<void> {
 		await window.withProgress(
 			{
+				cancellable: false,
 				location: ProgressLocation.Notification,
 				title: message,
-				cancellable: false,
 			},
 			async () => {
 				await new Promise((resolve) => setTimeout(resolve, durationMs));

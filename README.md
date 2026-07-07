@@ -26,7 +26,7 @@ This boilerplate provides a clean foundation with essential features already set
 
 - VS Code Extension runtime powered by TypeScript and the VS Code API.
 - Extension bundling handled by esbuild with incremental rebuild support.
-- Webview UI built with React 18 + TypeScript and bundled via Vite.
+- Webview UI built with React 19 + TypeScript and bundled via Vite.
 - Styling composed with Tailwind-style utility classes defined in `webview-ui/src/app.css`.
 - Quality tooling through Vitest (testing) and Biome (linting/formatting).
 
@@ -65,8 +65,8 @@ This boilerplate provides a clean foundation with essential features already set
 
 ### Prerequisites
 
--   Node.js 16+
--   VS Code 1.84.0+
+-   Node.js 22+
+-   VS Code 1.100.0+
 
 ### Setup
 

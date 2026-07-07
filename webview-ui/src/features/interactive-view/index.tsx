@@ -2,11 +2,12 @@ import { vscode } from "@/bridge/vscode";
 import { PillButton } from "@/components/pill-button";
 import { TextareaPanel } from "@/components/textarea-panel";
 import {
+	type ChangeEvent,
+	type KeyboardEvent,
 	useCallback,
 	useEffect,
 	useRef,
 	useState,
-	type KeyboardEvent,
 } from "react";
 
 export const InteractiveView = () => {
@@ -41,6 +42,17 @@ export const InteractiveView = () => {
 		textareaRef.current?.focus();
 	}, []);
 
+	const handleMessageChange = useCallback(
+		(event: ChangeEvent<HTMLTextAreaElement>) => {
+			setMessage(event.target.value);
+		},
+		[]
+	);
+
+	const handleClearResponse = useCallback(() => {
+		setResponse("");
+	}, []);
+
 	useEffect(() => {
 		const listener = (event: MessageEvent) => {
 			const payload = event.data;
@@ -72,7 +84,7 @@ export const InteractiveView = () => {
 
 			<TextareaPanel
 				containerClassName="px-2 shadow-[0_16px_32px_rgba(0,0,0,0.25)]"
-				onChange={(event) => setMessage(event.target.value)}
+				onChange={handleMessageChange}
 				onKeyDown={handleComposerKeyDown}
 				placeholder="Send a message to the extension..."
 				rows={5}
@@ -109,7 +121,7 @@ export const InteractiveView = () => {
 						Latest response
 					</h2>
 					{hasResponse && (
-						<PillButton onClick={() => setResponse("")}>
+						<PillButton onClick={handleClearResponse}>
 							Clear response
 						</PillButton>
 					)}

@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "displayName": "",
-  "description": "",
+  "name": "vscode-extension-boilerplate",
+  "displayName": "VSCode Extension Boilerplate",
+  "description": "A boilerplate for building VSCode extensions with a React-based WebView UI",
   "version": "0.1.0",
   "author": "atman-33",
   "publisher": "atman-dev",
@@ -11,7 +11,7 @@
     "url": "https://github.com/atman-33/vscode-extension-boilerplate"
   },
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": "^1.100.0"
   },
   "categories": [],
   "activationEvents": [],
@@ -22,14 +22,14 @@
   ],
   "scripts": {
     "install:all": "npm install && cd webview-ui && npm install",
-    "build:ext": "esbuild src/extension.ts --bundle --platform=node --target=node16 --external:vscode --outfile=dist/extension.js",
+    "build:ext": "esbuild src/extension.ts --bundle --platform=node --target=node20 --external:vscode --outfile=dist/extension.js",
     "build": "npm run build:ext && npm run build:webview",
     "vscode:prepublish": "npm run build",
     "compile": "npm run build && npm run package",
     "watch": "concurrently \"tsc -w -p ./\" \"npm:watch:webview\"",
     "package": "vsce package",
-    "lint": "ultracite lint",
-    "format": "ultracite format",
+    "lint": "ultracite check",
+    "format": "ultracite fix",
     "check": "ultracite check",
     "test": "vitest run",
     "test:watch": "vitest --watch",
@@ -89,22 +89,17 @@
     }
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.6",
-    "@jest/globals": "^29.7.0",
-    "@types/glob": "^8.1.0",
-    "@types/node": "^20.x",
-    "@types/vscode": "^1.84.0",
-    "@vitest/ui": "^3.2.4",
-    "concurrently": "^9.2.0",
-    "copy-webpack-plugin": "^13.0.0",
-    "esbuild": "^0.23.0",
+    "@biomejs/biome": "^2.5.2",
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.100.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/ui": "^4.1.10",
+    "@vscode/vsce": "^3.9.2",
+    "concurrently": "^10.0.3",
+    "esbuild": "^0.28.1",
     "husky": "^9.1.7",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.4.0",
-    "ts-loader": "^9.5.2",
-    "typescript": "^5.3.0",
-    "ultracite": "^6.3.4",
-    "vitest": "^3.2.4",
-    "vsce": "^2.15.0"
+    "typescript": "^5.9.3",
+    "ultracite": "^7.9.2",
+    "vitest": "^4.1.10"
   }
 }

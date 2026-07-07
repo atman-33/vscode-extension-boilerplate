@@ -1,9 +1,8 @@
-/** biome-ignore-all lint/nursery/noUselessUndefined: ignore */
 const createDisposable = () => ({ dispose: () => undefined });
 
 export const commands = {
-	registerCommand: () => createDisposable(),
 	executeCommand: async () => undefined,
+	registerCommand: () => createDisposable(),
 };
 
 export const window = {

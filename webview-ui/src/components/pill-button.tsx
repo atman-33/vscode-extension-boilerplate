@@ -2,9 +2,9 @@ import type React from "react";
 
 export interface PillButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	children: React.ReactNode;
 	className?: string;
 	style?: React.CSSProperties;
-	children: React.ReactNode;
 }
 
 /**

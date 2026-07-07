@@ -16,7 +16,7 @@ This document describes how to cut a release and publish the extension to both t
   - `VSCE_PAT`: Personal Access Token for VS Code Marketplace publish.
   - `OPEN_VSX_TOKEN`: Token for Open VSX publish.
 - Permissions: The default `GITHUB_TOKEN` is used for tagging and creating releases.
-- Node.js: Workflows use Node 20 on GitHub-hosted runners.
+- Node.js: Workflows use Node 22 on GitHub-hosted runners.
 
 ## Changelog Policy
 

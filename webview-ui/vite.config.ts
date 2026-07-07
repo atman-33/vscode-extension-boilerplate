@@ -4,25 +4,25 @@ import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
 // Single-entry build for all webviews. Pages are selected at runtime via
-// data-page attribute on #root and dynamic imports in src/index.tsx.
+// the data-page attribute on #root and the pages map in src/index.tsx.
 export default defineConfig({
 	base: "./",
+	build: {
+		emptyOutDir: true,
+		outDir: resolve(import.meta.dirname, "../dist/webview/app"),
+		rollupOptions: {
+			input: resolve(import.meta.dirname, "index.html"),
+			output: {
+				assetFileNames: "assets/[name][extname]",
+				chunkFileNames: "chunks/[name].js",
+				entryFileNames: "index.js",
+			},
+		},
+	},
 	plugins: [react(), tailwindcss()],
 	resolve: {
 		alias: {
-			"@": resolve(__dirname, "src"),
-		},
-	},
-	build: {
-		outDir: resolve(__dirname, "../dist/webview/app"),
-		emptyOutDir: true,
-		rollupOptions: {
-			input: resolve(__dirname, "index.html"),
-			output: {
-				entryFileNames: "index.js",
-				chunkFileNames: "chunks/[name].js",
-				assetFileNames: "assets/[name][extname]",
-			},
+			"@": resolve(import.meta.dirname, "src"),
 		},
 	},
 });

@@ -13,7 +13,7 @@ export const showInformationMessage = () => {
 export const reverseSelection = () => {
 	const editor = window.activeTextEditor;
 	if (editor) {
-		const selection = editor.selection;
+		const { selection } = editor;
 		const text = editor.document.getText(selection);
 		const reversedText = text.split("").reverse().join("");
 		editor.edit((editBuilder) => {

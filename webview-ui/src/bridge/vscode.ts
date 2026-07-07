@@ -1,8 +1,8 @@
 // Minimal wrapper around acquireVsCodeApi with a dev-friendly fallback
 
 interface VsCodeApi {
-	postMessage: (message: any) => void;
 	getState: () => any;
+	postMessage: (message: any) => void;
 	setState: (state: any) => void;
 }
 
@@ -23,22 +23,22 @@ if (
 } else {
 	// Local preview fallback (no-op postMessage)
 	vscodeApi = {
+		getState: () => ({}),
 		postMessage: (msg: any) => {
 			// Simulate echo in dev: bounce back the same message shape
 			window.setTimeout(() => {
 				window.dispatchEvent(
 					new MessageEvent("message", {
 						data: {
-							type: "codex.chat/echoResult",
 							id: msg.id,
 							text: msg.text,
 							ts: Date.now(),
+							type: "codex.chat/echoResult",
 						},
 					})
 				);
 			}, DEV_ECHO_TIMEOUT_MS);
 		},
-		getState: () => ({}),
 		// In dev mode, state is not persisted
 		setState: () => ({}),
 	};
