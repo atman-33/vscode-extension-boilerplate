@@ -37,7 +37,7 @@ export function TextareaPanel({
 	return (
 		<div
 			className={
-				"box-border flex h-full w-full min-w-0 flex-col gap-2 rounded-2xl border bg-[var(--vscode-dropdown-background)] pt-4 pb-2" +
+				"box-border flex h-full w-full min-w-0 flex-col gap-2 rounded-2xl border bg-(--vscode-dropdown-background) pt-4 pb-2" +
 				(containerClassName ?? "")
 			}
 			style={{
@@ -49,7 +49,7 @@ export function TextareaPanel({
 			<div className="h-full min-w-0 flex-1">
 				<textarea
 					className={
-						"w-full resize-none overflow-x-hidden bg-transparent px-3 text-[color:var(--vscode-foreground)] outline-none ring-0 placeholder:text-[color:var(--vscode-input-placeholderForeground,#888)]" +
+						"w-full resize-none overflow-x-hidden bg-transparent px-3 text-(--vscode-foreground) outline-none ring-0 placeholder:text-(--vscode-input-placeholderForeground,#888)" +
 						(textareaClassName ?? "")
 					}
 					disabled={!!disabled}

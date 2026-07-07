@@ -74,10 +74,10 @@ export const InteractiveView = () => {
 	return (
 		<div className="mx-auto flex h-full max-w-3xl flex-col gap-5 px-3 py-0.5">
 			<header className="flex flex-col gap-2">
-				<h1 className="font-semibold text-[color:var(--vscode-foreground)] text-xl leading-tight">
+				<h1 className="font-semibold text-(--vscode-foreground) text-xl leading-tight">
 					Interactive Playground
 				</h1>
-				<p className="text-[color:var(--vscode-descriptionForeground,rgba(255,255,255,0.65))] text-sm">
+				<p className="text-(--vscode-descriptionForeground,rgba(255,255,255,0.65)) text-sm">
 					Compose a request for the extension and review the response below.
 				</p>
 			</header>
@@ -93,19 +93,19 @@ export const InteractiveView = () => {
 				value={message}
 			>
 				<div className="flex flex-wrap items-center justify-between gap-3 p-2">
-					<span className="text-[color:var(--vscode-descriptionForeground,rgba(255,255,255,0.6))] text-xs">
+					<span className="text-(--vscode-descriptionForeground,rgba(255,255,255,0.6)) text-xs">
 						Press ⌘⏎ / Ctrl+Enter to send
 					</span>
 					<div className="flex items-center gap-2">
 						<PillButton
-							className="text-[color:var(--vscode-descriptionForeground,#9ca3af)]"
+							className="text-(--vscode-descriptionForeground,#9ca3af)"
 							disabled={isMessageEmpty}
 							onClick={handleClearMessage}
 						>
 							Clear
 						</PillButton>
 						<PillButton
-							className="bg-[color:var(--vscode-button-background,#7c3aed)] text-[color:var(--vscode-button-foreground,#ffffff)] hover:bg-[color:var(--vscode-button-hover-background,var(--vscode-button-background,#7c3aed)))]"
+							className="bg-(--vscode-button-background,#7c3aed) text-(--vscode-button-foreground,#ffffff) hover:bg-(--vscode-button-hover-background,var(--vscode-button-background,#7c3aed))"
 							disabled={isMessageEmpty}
 							onClick={handleSendMessage}
 						>
@@ -117,7 +117,7 @@ export const InteractiveView = () => {
 
 			<section className="flex min-h-[10rem] flex-col gap-4 rounded-2xl border border-[color:color-mix(in_srgb,var(--vscode-foreground)_12%,transparent)] bg-[color:color-mix(in_srgb,var(--vscode-editor-background)_70%,transparent)] px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
 				<div className="flex flex-wrap items-center justify-between gap-3">
-					<h2 className="font-medium text-[color:var(--vscode-foreground)] text-base">
+					<h2 className="font-medium text-(--vscode-foreground) text-base">
 						Latest response
 					</h2>
 					{hasResponse && (
@@ -130,8 +130,8 @@ export const InteractiveView = () => {
 					className={
 						"whitespace-pre-wrap text-sm leading-relaxed" +
 						(hasResponse
-							? "text-[color:var(--vscode-foreground)]"
-							: "text-[color:var(--vscode-descriptionForeground,rgba(255,255,255,0.6))] italic")
+							? "text-(--vscode-foreground)"
+							: "text-(--vscode-descriptionForeground,rgba(255,255,255,0.6)) italic")
 					}
 				>
 					{hasResponse
